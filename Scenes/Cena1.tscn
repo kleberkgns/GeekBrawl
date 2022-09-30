@@ -57,5 +57,5 @@ __meta__ = {
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 7
+frame = 5
 playing = true
