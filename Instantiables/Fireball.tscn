@@ -13,8 +13,8 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
-scale = Vector2( 3, 3 )
+[node name="Fireball" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -23,5 +23,4 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
-frame = 1
 playing = true

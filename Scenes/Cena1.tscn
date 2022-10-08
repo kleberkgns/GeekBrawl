@@ -46,16 +46,16 @@ animations = [ {
 
 [node name="Node2D" type="Node2D"]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 502.006, 427.576 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
+[node name="Sprite" type="AnimatedSprite" parent="Player"]
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 7
+frame = 4
 playing = true

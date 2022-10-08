@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 var direction = Vector2()
 var speed = 3
-
+var fireball = preload("res://Instantiables/Fireball.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,3 +40,10 @@ func _process(delta):
 		get_child(0).flip_h = false
 	else:
 		get_child(0).flip_h = true
+	
+	# ---------------------- Fireball -------------
+	if Input.is_action_just_pressed("shoot"):
+		#print("fogo")
+		var new_fireball = fireball.instance()
+		new_fireball.position = self.position
+		self.get_parent().add_child(new_fireball)
