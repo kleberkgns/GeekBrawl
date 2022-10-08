@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Sprites/Player/Idle/Character_Idle12.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/player.gd" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Sprites/Player/Walk/Character_Run6.png" type="Texture" id=29]
 [ext_resource path="res://Sprites/Player/Walk/Character_Run7.png" type="Texture" id=30]
 [ext_resource path="res://Instantiables/Enemy.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scripts/EnemySpawner.gd" type="Script" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -58,7 +59,7 @@ __meta__ = {
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 15
+frame = 18
 playing = true
 
 [node name="Enemy" parent="." instance=ExtResource( 31 )]
@@ -69,3 +70,10 @@ position = Vector2( 233, 170 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 31 )]
 position = Vector2( 155, 105 )
+
+[node name="EnemySpawn" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+script = ExtResource( 32 )
+
+[connection signal="timeout" from="EnemySpawn" to="EnemySpawn" method="_on_EnemySpawn_timeout"]

@@ -13,4 +13,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	angle = get_angle_to(player.position)
-	move_and_collide(Vector2(1, 0).rotated(angle) * speed)
+	if position.distance_to(player.position) > 75:
+		move_and_collide(Vector2(1, 0).rotated(angle) * speed)
